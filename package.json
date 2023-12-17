@@ -1,0 +1,14 @@
+{
+  "name": "boilerplate-fastify-prisma-api",
+  "version": "1.0.0",
+  "description": "A boilerplate for APIs with Fastify and Prisma",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stanley Sathler",
+  "license": "MIT",
+  "dependencies": {
+    "fastify": "^4.25.1"
+  }
+}

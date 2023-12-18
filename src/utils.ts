@@ -1,5 +1,6 @@
 import Fastify from "fastify";
 import fastifyCookie from "@fastify/cookie";
+import { TypeBoxTypeProvider } from "@fastify/type-provider-typebox";
 
 import { productRouter } from "./services/product/router";
 
@@ -8,10 +9,10 @@ export const setupApp = () => {
     logger: true,
   });
 
-  /*
-   * Plugins.
-   */
-  // Add support for reading and setting cookies.
+  // Enable Typebox for schema definitions.
+  fastify.withTypeProvider<TypeBoxTypeProvider>();
+
+  // Add plugin for reading and setting cookies.
   fastify.register(fastifyCookie, {
     secret: "cookie-secret-signature",
   });

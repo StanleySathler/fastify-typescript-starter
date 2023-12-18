@@ -1,3 +1,12 @@
-const sum = (a: number, b: number): number => a + b;
+import { setupApp } from "./utils";
 
-console.log("Hey", sum(1, 2));
+/*
+ * Start server.
+ */
+const app = setupApp();
+app.listen({ port: 3001 }, function (err) {
+  if (err) {
+    app.log.error(err);
+    process.exit(1);
+  }
+});

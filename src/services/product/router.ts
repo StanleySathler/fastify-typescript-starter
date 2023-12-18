@@ -1,8 +1,35 @@
 import { FastifyInstance } from "fastify";
 
-import * as authController from "./controller";
+import * as productController from "./controller";
 
 export const productRouter = async (instance: FastifyInstance) => {
-  // TODO: add schemas
-  instance.get("/", authController.listProducts);
+  instance.addSchema({
+    $id: "productResourceSchema",
+    type: "object",
+    properties: {
+      id: { type: "number" },
+      name: { type: "string" },
+      price: { type: "number" },
+    },
+  });
+
+  instance.get(
+    "/",
+    {
+      schema: {
+        response: {
+          200: {
+            type: "object",
+            properties: {
+              data: {
+                type: "array",
+                items: { $ref: "productResourceSchema" },
+              },
+            },
+          },
+        },
+      },
+    },
+    productController.listProducts
+  );
 };

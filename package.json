@@ -4,6 +4,8 @@
   "description": "A boilerplate for APIs with Fastify and Prisma",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "start": "node ./dist",
     "start:local": "npx ts-node src/index.ts",
     "test": "jest --no-coverage"
   },

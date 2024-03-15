@@ -1,4 +1,4 @@
-name: "PR: QA"
+name: "Fastify Starter: QA"
 
 on:
   pull_request:

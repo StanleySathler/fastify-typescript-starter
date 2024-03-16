@@ -7,7 +7,8 @@
     "build": "tsc",
     "start": "node ./dist",
     "start:local": "npx ts-node src/index.ts",
-    "test": "jest --no-coverage"
+    "test:unit": "jest",
+    "test:unit:watch": "jest --watch --coverage=false"
   },
   "author": "Stanley Sathler",
   "license": "MIT",

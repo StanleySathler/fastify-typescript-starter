@@ -1,5 +1,12 @@
 # fastify-typescript-starter
 
+## Features
+
+- Continuous Integration
+  - Run tests on every PR or every merge to `main`
+- Integration tests
+  - Tests testing from request to response, without mocks, with maximum confidence
+
 ## Development
 
 Pre-requisites

@@ -5,7 +5,12 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "npm" # Use npm
+    directory: "/" # Location of package.json
     schedule:
-      interval: "weekly"
+      interval: "monthly" # Check for updates every month
+    groups: # Ensure we create a single PR for the groups of updates
+      all-deps:
+        update-types: # Create separate PRs for these kind of updates
+          - "major"
+          - "minor"
